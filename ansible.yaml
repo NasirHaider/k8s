@@ -1,11 +1,16 @@
 - hosts: all
-  become: true
-  tasks: 
+  tasks:
      - name: delete old deployment
-       command: kubectl delete -f /home/ubuntu/Deployment.yml
+       command: microk8s kubectl delete -f /home/nasir/assets/deployment.yaml
+       register: command_result
+       # ignore_errors: true
+       failed_when: command_result.rc != 1 and command_result.rc != 0
      - name: delete old service
-       command: kubectl delete -f /home/ubuntu/Service.yml
+       command: microk8s kubectl delete -f /home/nasir/assets/service.yaml
+       register: command_result
+       # ignore_errors: true
+       failed_when: command_result.rc != 1 and command_result.rc != 0
      - name: create new deployment
-       command: kubectl apply -f /home/ubuntu/Deployment.yml
+       command: microk8s kubectl apply -f /home/nasir/assets/deployment.yaml
      - name: create new service
-       command: kubectl apply -f /home/ubuntu/Service.yml
+       command: microk8s kubectl apply -f /home/nasir/assets/service.yaml

@@ -1,9 +1,9 @@
 kind: Service                             
 apiVersion: v1
 metadata:
-  name: pl-demo
+  name: devops
   labels:
-    app: pl-demo
+    app: devops
 spec:
   ports:
     - port: 8080                               

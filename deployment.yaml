@@ -1,12 +1,12 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-   name: pl-demo
+   name: devops
 spec:
    replicas: 2
    selector:      # tells the controller which pods to watch/belong to
     matchLabels:
-     app: pl-demo
+     app: devops
    template:
       metadata:
         labels:

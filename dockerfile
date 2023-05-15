@@ -10,4 +10,4 @@ WORKDIR /var/www/html/
 #RUN cp -rvf leadmark/* .
 #RUN rm -rf leadmark leadmark.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80 22
+EXPOSE 80

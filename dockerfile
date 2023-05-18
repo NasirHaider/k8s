@@ -6,8 +6,5 @@ RUN yum install -y httpd zip unzip git
 RUN git clone https://github.com/NasirHaider/k8s.git /tmp/k8s
 RUN cp -rf /tmp/k8s/html/* /var/www/html/
 WORKDIR /var/www/html/
-#RUN unzip leadmark.zip
-#RUN cp -rvf leadmark/* .
-#RUN rm -rf leadmark leadmark.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80

@@ -7,4 +7,4 @@ RUN yum install -y httpd
 RUN cp -rf html/* /var/www/html/
 WORKDIR /var/www/html/
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80 22
+EXPOSE 80   22
